@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "253802265474",
+    "project_id": "pushnots-983eb",
+    "storage_bucket": "pushnots-983eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:253802265474:android:7a41860b4a79d7b01c6d9b",
+        "android_client_info": {
+          "package_name": "com.pushnots"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmFgsj815jkfG937MuSAIoXPQFwslgi8Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
