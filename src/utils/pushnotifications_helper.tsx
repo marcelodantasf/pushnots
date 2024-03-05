@@ -13,7 +13,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 }
 
 export async function GetFCMToken(){
-    let fcmtoken=AsyncStorage.getItem("fcmtoken");
+    let fcmtoken= await AsyncStorage.getItem("fcmtoken");
     console.log(fcmtoken,"old token");
     if(!fcmtoken) {
         try{
@@ -26,4 +26,26 @@ export async function GetFCMToken(){
             console.log(error,"error in fcmtoken");
         }
     }
+}
+
+export const NotificationListner=()=>{
+
+  messaging().onNotificationOpenedApp(remoteMessage=>{
+    console.log(
+      'Notification caused app to open from backgroud state:',remoteMessage.notification,
+    );
+  });
+
+  messaging()
+  .getInitialNotification()
+  .then(remoteMessage => {
+    if(remoteMessage) {
+      console.log('Notification cause app to open from quit state:',remoteMessage.notification,);
+    }
+  });
+
+  messaging().onMessage(async remoteMessage =>{
+    console.log("notification from foreground state......",remoteMessage);
+  })
+
 }

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import messaging from '@react-native-firebase/messaging';
 import requestUserPermission from './src/utils/pushnotifications_helper';
-import { GetFCMToken } from './src/utils/pushnotifications_helper';
+import { GetFCMToken, NotificationListner } from './src/utils/pushnotifications_helper';
 
 
 const App = () => {
@@ -10,6 +10,7 @@ const App = () => {
   useEffect(() =>{
     requestUserPermission();
     GetFCMToken();
+    NotificationListner();
   },[])
 
   return (
